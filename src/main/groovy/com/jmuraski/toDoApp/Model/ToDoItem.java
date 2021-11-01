@@ -1,5 +1,8 @@
 package com.jmuraski.toDoApp.Model;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 
 @Entity
@@ -19,6 +22,7 @@ public class ToDoItem {
     private String toDo;
     @ManyToOne(targetEntity = ToDoList.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "to_do_list_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private ToDoList toDoList;
 
     public ToDoItem() {
