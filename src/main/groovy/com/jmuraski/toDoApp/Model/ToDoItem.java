@@ -49,6 +49,14 @@ public class ToDoItem {
         this.toDo = toDo;
     }
 
+    public ToDoList getToDoList() {
+        return toDoList;
+    }
+
+    public void setToDoList(ToDoList toDoList) {
+        this.toDoList = toDoList;
+    }
+
     @Override
     public String toString() {
         return "ToDoItem{" +
