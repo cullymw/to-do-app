@@ -21,8 +21,7 @@ public class ToDoItemService {
     }
 
     public List<ToDoItem> getToDoItemsByList(Long listId) {
-        //Update "findAll() to correct search
-        return toDoItemRepository.findAll();
+        return toDoItemRepository.findByToDoListId(listId);
     }
 
     public void addToDoItem(Long listId, ToDoItem toDoItem) {

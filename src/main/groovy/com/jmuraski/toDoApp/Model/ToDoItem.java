@@ -1,5 +1,6 @@
 package com.jmuraski.toDoApp.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -22,6 +23,7 @@ public class ToDoItem {
     private String toDo;
     @ManyToOne(targetEntity = ToDoList.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "to_do_list_id")
+    @JsonIgnoreProperties(value = {"to_do_item", "hibernateLazyInitializer"})
     @OnDelete(action = OnDeleteAction.CASCADE)
     private ToDoList toDoList;
 
