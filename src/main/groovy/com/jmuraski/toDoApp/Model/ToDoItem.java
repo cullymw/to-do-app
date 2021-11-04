@@ -23,7 +23,7 @@ public class ToDoItem {
     private String toDo;
     @ManyToOne(targetEntity = ToDoList.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "to_do_list_id")
-    @JsonIgnoreProperties(value = {"to_do_item", "hibernateLazyInitializer"})
+    @JsonIgnoreProperties(value = {"hibernateLazyInitializer", "handler"})
     @OnDelete(action = OnDeleteAction.CASCADE)
     private ToDoList toDoList;
 
